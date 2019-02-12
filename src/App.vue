@@ -7,8 +7,8 @@
 <script>
   import axios from 'axios';
   import SearchBar from './components/SearchBar';
-  import API_KEY from './config.js';
-  const key = API_KEY;
+  import {API_KEY} from './config.js';
+
   export default {
     name: "App",
     components: {
@@ -16,15 +16,15 @@
     },
     methods: {
       onTermChange(searchTerm) {
-        axios.get('https://googleapis.com/youtube/v3/search', {
+        axios.get('https://www.googleapis.com/youtube/v3/search', {
           params: {
-            key,
+            key: API_KEY,
             type: 'video',
             part: 'snippet',
             q: searchTerm,
           }
         })
-          .then( res => console.log(res))
+          .then(res => console.log(res))
       }
     }
   };
