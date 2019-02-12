@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="list-group">
     <VideoListItem 
       v-for="video in videos"
       :video="video"
@@ -23,5 +23,5 @@ export default {
 </script>
 
 <style>
-
+  
 </style>
